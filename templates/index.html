@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <main>
+            <div class="redirect_button">
+                <button>
+                    <a href="{% url 'upload_page' %}">Загрузить изображение</a>
+                </button>
+                <ol>
+                    {% for image in images %}
+                        <li><a href="{% url 'image_page' pk=image.id %}"> Фото {{ image.id}}</a></li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </main>
+    </body>
+</html>

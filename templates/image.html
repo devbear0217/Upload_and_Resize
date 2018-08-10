@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <div class="container">
+            <img src="{{ image.image_file.url }}" style="width: {{ query_params.0 }}px; height: {{ query_params.1 }}px">
+            <form method="post" action="" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ resize_form.as_p }}
+                <input type="submit" class="" value="Изменить размеры">
+            </form>
+        </div>
+    </body>
+</html>
